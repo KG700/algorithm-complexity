@@ -18,6 +18,12 @@ class Array
 
   end
 
+  def quad_reverse
+      new_arr = []
+      self.each { |element| new_arr.unshift(element) }
+      new_arr;
+  end
+
 end
 
 # Input | Output
