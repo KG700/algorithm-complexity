@@ -1,7 +1,35 @@
 class Array
 
-  # selection_sort
-  # insertion_sort
+  def selection_sort
+
+    sorted_array = []
+
+    while !self.empty? do
+      # iterate over array to find a minimum
+      min_value = self.first
+      min_index = 0
+      self.each_with_index do |element, index|
+        if element < min_value
+          min_value = element
+          min_index = index
+        end
+      end
+
+      # swap minimum with last element in array, and pop
+      self[min_index] = self.last
+      self[-1] = min_value
+      self.pop
+
+      # push minimum to start of array
+      sorted_array.push(min_value)
+    end
+
+    return sorted_array
+
+  end
+
+  def insertion_sort
+  end
 
   def merge_sort
     return self if self.length < 2
@@ -32,7 +60,7 @@ class Array
   def quick_sort
     return self if self.length < 2
 
-    # split into array in 2 using pivot
+    # split into 2 arrays using a pivot
     pivot = self.shift
     left_array = []
     right_array = []
