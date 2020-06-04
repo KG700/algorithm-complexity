@@ -11,7 +11,7 @@ class Array
     left_array = split_array[0].merge_sort
     right_array = split_array[1].merge_sort
 
-    # merge arrays:
+    # merge arrays using card sort method:
     sorted_array = []
 
     while !left_array.empty? && !right_array.empty? do
@@ -29,6 +29,28 @@ class Array
 
   end
 
-  # quick_sort
+  def quick_sort
+    return self if self.length < 2
+
+    # split into array in 2 using pivot
+    pivot = self.shift
+    left_array = []
+    right_array = []
+
+    self.each do |element|
+      if element < pivot
+        left_array.push(element)
+      else
+        right_array.push(element)
+      end
+    end
+
+    left_array = left_array.quick_sort
+    right_array = right_array.quick_sort
+
+    # merge by joining left array + pivot + right array
+    sorted_array = left_array.push(pivot).push(right_array).flatten
+
+  end
 
 end
