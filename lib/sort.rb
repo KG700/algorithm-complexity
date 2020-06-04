@@ -20,7 +20,7 @@ class Array
       self[-1] = min_value
       self.pop
 
-      # push minimum to start of array
+      # push minimum to sorted array
       sorted_array.push(min_value)
     end
 
@@ -29,6 +29,27 @@ class Array
   end
 
   def insertion_sort
+
+    sorted_array = [self.shift]
+
+    # iterate through sorted array and insert
+    # first element of self when element is bigger
+
+    while !self.empty? do
+      insert_index = sorted_array.length
+
+      sorted_array.each_with_index do |element, index|
+        if self.first < element
+          insert_index = index
+          break
+        end
+      end
+
+      sorted_array.insert(insert_index, self.shift)
+    end
+
+    return sorted_array
+
   end
 
   def merge_sort
