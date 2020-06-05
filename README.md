@@ -5,10 +5,12 @@ Four part workshop run by Makers Academy that explores Algorithm Complexity http
 Algorithm complexity is the part of computer science that deals with how efficient programmes are. This workshop takes a deeper look at how programmes interact with memory, and how to use that to make our own programmes faster.
 
 ### Task 1: Build a timing framework
-- Created a timing framework that returns the time needed to execute a function.
+- Created a timing framework that returns the time needed to execute a function: '/lib/timer.rb'
 - Timing framework passes into the function arrays that increase in size in the range of 5,000 - 100,000 elements in steps of 5,000 elements. This is to test how the functions scale as the arrays get bigger.
 - The timing framework outputs into the terminal the array size and time so it's in a format that can easily be transferred into a spreadsheet into charts.
 - The timing framework runs the function for each array size and finds the median. This ensures the results are smoother and more representative
+
+[add a screenshot of some charts here]
 
 ## Task 2: Building algorithms
 - Shuffle
